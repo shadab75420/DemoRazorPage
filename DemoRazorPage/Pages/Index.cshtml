@@ -1,0 +1,31 @@
+﻿@page
+@model DemoRazorPage.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h3>GET Example</h3>
+
+<form method="get">
+    <input type="text" asp-for="SearchName" placeholder="Enter name" />
+    <button type="submit">Search</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SearchName))
+{
+    <p>You have searched for: @Model.SearchName</p>
+}
+
+<hr />
+
+<h3>POST Example</h3>
+
+<form method="post">
+    <input type="text" asp-for="Name" placeholder="Enter name" />
+    <button type="submit">Submit</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Name))
+{
+    <p>You submitted: @Model.Name</p>
+}
